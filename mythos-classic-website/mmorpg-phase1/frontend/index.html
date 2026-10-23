@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#293c2d" />
+    <title>Mythos Classic — Browser MMORPG</title>
+  </head>
+  <body>
+    <div id="app">
+      <main class="auth-shell">
+        <section class="brand-panel">
+          <div class="brand-mark">M</div>
+          <p class="eyebrow">A REALM IN THE MAKING</p>
+          <h1>Find your<br /><span>next legend.</span></h1>
+          <p class="brand-copy">Enter a living world shaped by the people who explore it.</p>
+          <div class="world-art" aria-hidden="true">
+            <div class="moon"></div><div class="mountain mountain-back"></div><div class="mountain mountain-front"></div>
+            <div class="ground-glow"></div>
+          </div>
+        </section>
+        <section class="auth-panel">
+          <div class="auth-card">
+            <p class="eyebrow">WELCOME TO MYTHOS</p>
+            <h2 id="auth-title">Sign in</h2>
+            <p class="muted" id="auth-subtitle">Your adventure is waiting.</p>
+            <div class="auth-tabs">
+              <button type="button" class="tab active" id="login-tab">Sign in</button>
+              <button type="button" class="tab" id="register-tab">Create account</button>
+            </div>
+            <form id="auth-form">
+              <label id="username-wrap" class="hidden">Username
+                <input id="username" name="username" autocomplete="username" minlength="3" maxlength="24" />
+              </label>
+              <label id="identity-wrap">Username or email
+                <input id="identity" name="identity" autocomplete="username" required maxlength="254" />
+              </label>
+              <label>Email
+                <input id="email" name="email" type="email" autocomplete="email" maxlength="254" class="hidden" />
+              </label>
+              <label>Password
+                <input id="password" name="password" type="password" autocomplete="current-password" minlength="12" maxlength="128" required />
+              </label>
+              <label id="owner-secret-wrap" class="hidden">Owner enrollment secret
+                <input id="owner-secret" name="ownerBootstrapSecret" type="password" autocomplete="off" />
+                <small>Only needed for the configured owner email.</small>
+              </label>
+              <button class="primary-button" id="submit-button" type="submit">Enter the realm</button>
+              <p class="form-message" id="form-message" role="status"></p>
+            </form>
+            <p class="fine-print">Use a unique password of at least 12 characters.</p>
+          </div>
+        </section>
+      </main>
+    </div>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>

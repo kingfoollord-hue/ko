@@ -1,0 +1,27 @@
+services:
+  - type: web
+    name: mythos-classic
+    runtime: node
+    plan: starter
+    buildCommand: npm --prefix frontend install && npm --prefix frontend run build && npm --prefix backend install
+    startCommand: npm --prefix backend start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: JWT_SECRET
+        generateValue: true
+      - key: JWT_EXPIRES_IN
+        value: 2h
+      - key: OWNER_EMAIL
+        value: change-this-to-your-email@example.com
+      - key: OWNER_BOOTSTRAP_SECRET
+        generateValue: true
+      - key: BCRYPT_ROUNDS
+        value: 12
+      - key: FRONTEND_ORIGIN
+        value: "*"
+    disk:
+      name: mythos-player-saves
+      mountPath: /opt/render/project/src/backend/data
+      sizeGB: 1
